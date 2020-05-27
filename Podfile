@@ -8,5 +8,5 @@ target 'Corntinental' do
   # Pods for Corntinental
   pod 'PusherSwift'
   pod 'Alamofire'
-  pod 'KeychainStorage', '~> 1.3.0'
+  pod 'SwiftKeychainWrapper'
 end

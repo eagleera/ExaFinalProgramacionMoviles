@@ -11,10 +11,9 @@ import Combine
 
 class LoginViewModel: ObservableObject, Identifiable {
     
-    @Published var username = ""
+    @Published var email = ""
     @Published var password = ""
     
-    @Published var isLoggedIn = false
     @Published var isLoading = false
     
     @Published var shouldNavigate = false
@@ -23,7 +22,7 @@ class LoginViewModel: ObservableObject, Identifiable {
     
     var loginHandler = LoginHandler()
     
-    @Published var woofUrl = ""
+    @Published var authenticated = false
     
     private var isLoadingPublisher: AnyPublisher<Bool, Never> {
         loginHandler.$isLoading
@@ -32,16 +31,10 @@ class LoginViewModel: ObservableObject, Identifiable {
             .eraseToAnyPublisher()
     }
     
-    private var isAuthenticatedPublisher: AnyPublisher<String, Never> {
-        loginHandler.$woofResponse
-            .receive(on: RunLoop.main)
-            .map { response in
-                guard let response = response else {
-                    return ""
-                }
-                
-                return response.url ?? ""
-        }
+    private var isAuthenticatedPublisher: AnyPublisher<Bool, Never> {
+        loginHandler.$authenticated
+        .receive(on: RunLoop.main)
+        .map { $0 }
         .eraseToAnyPublisher()
     }
     
@@ -50,15 +43,15 @@ class LoginViewModel: ObservableObject, Identifiable {
             .receive(on: RunLoop.main)
             .assign(to: \.isLoading, on: self)
             .store(in: &disposables)
-        
+
         isAuthenticatedPublisher
             .receive(on: RunLoop.main)
-            .assign(to: \.woofUrl, on: self)
+            .assign(to: \.authenticated, on: self)
             .store(in: &disposables)
     }
     
-    func getRandomDog() {
-        loginHandler.getRandomDog()
+    func login(){
+        loginHandler.tryLogin(email: email, password: password)
     }
     
 }

@@ -10,8 +10,9 @@ import SwiftUI
 
 struct LoginView: View {
     @ObservedObject var viewModel = LoginViewModel()
+    
     var loginButton: some View {
-        NavigationLink(destination: DogView(url: viewModel.woofUrl), isActive: .constant($viewModel.woofUrl.wrappedValue != "")) {
+        NavigationLink(destination: DetailView(), isActive: .constant(viewModel.authenticated)) {
             VStack {
                 Spacer()
                 HStack {
@@ -30,7 +31,7 @@ struct LoginView: View {
     }
     
     var placeHolderTextView: some View {
-        PlaceholderTextField(placeholder: Text("Usuario"), text: $viewModel.username)
+        PlaceholderTextField(placeholder: Text("Correo"), text: $viewModel.email)
             .padding(.top, 32.0)
     }
     
@@ -43,7 +44,7 @@ struct LoginView: View {
         VStack(alignment: .leading) {
             Text("Bienvenido a")
                 .tracking(1.0)
-            Text("Perritoz").fontWeight(.bold)
+            Text("Corntinental").fontWeight(.bold)
         }.padding(EdgeInsets(top: 44.0, leading: .zero, bottom: .zero, trailing: .zero))
     }
     
@@ -64,7 +65,7 @@ struct LoginView: View {
     }
     
     private func loginUser() {
-        viewModel.getRandomDog()
+        viewModel.login()
     }
 }
 

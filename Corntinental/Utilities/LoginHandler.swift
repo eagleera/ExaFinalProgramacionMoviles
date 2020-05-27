@@ -8,28 +8,31 @@
 
 import Combine
 import Alamofire
-import KeychainStorage
+import SwiftKeychainWrapper
 
 class LoginHandler: APIHandler {
     
-    @Published var woofResponse: WoofResponse?
+    @Published var authenticated = false
     @Published var isLoading = false
             
-    func getRandomDog() {
-        isLoading = true
-        
-        let url = "https://random.dog/woof.json"
-        
-        AF.request(url, method: .get).responseDecodable { [weak self] (response: DataResponse<WoofResponse, AFError>) in
-            guard let weakSelf = self else { return }
-            
-            guard let response = weakSelf.handleResponse(response) as? WoofResponse else {
-                weakSelf.isLoading = false
-                return
-            }
-                            
-            weakSelf.isLoading = false
-            weakSelf.woofResponse = response
+    func tryLogin(email :String , password :String) {
+        let body: [String: String] = [
+            "email" : email,
+            "password" : password,
+        ]
+        AF.request("https://corntinental.herokuapp.com/api/auth/login", method: .post,  parameters: body, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    if let json = value as? [String: Any] {
+                        if(json["access_token"] != nil){
+                            let success: Bool = KeychainWrapper.standard.set(json["access_token"] as! String, forKey: "accessToken")
+                            self.authenticated = success
+                        }
+                    }
+                case .failure(let error):
+                    print(error)
+                }
         }
     }
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00D03EC5247E38CE005F82A0 /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D03EC4247E38CE005F82A0 /* RecordViewModel.swift */; };
+		00D03EC7247E3961005F82A0 /* GameHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D03EC6247E3961005F82A0 /* GameHandler.swift */; };
+		00D03EC9247E3996005F82A0 /* RecordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D03EC8247E3996005F82A0 /* RecordResponse.swift */; };
 		00DD492E2474AF32003E86B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DD492D2474AF32003E86B1 /* AppDelegate.swift */; };
 		00DD49302474AF32003E86B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DD492F2474AF32003E86B1 /* SceneDelegate.swift */; };
 		00DD49322474AF32003E86B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DD49312474AF32003E86B1 /* ContentView.swift */; };
@@ -17,8 +20,7 @@
 		00DD49462474B79E003E86B1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DD49452474B79E003E86B1 /* LoginViewModel.swift */; };
 		00DD49492474B80F003E86B1 /* LoginHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DD49482474B80F003E86B1 /* LoginHandler.swift */; };
 		00DD494B2474B867003E86B1 /* ApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DD494A2474B867003E86B1 /* ApiHandler.swift */; };
-		00DD494E2474B8B2003E86B1 /* WoofResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DD494D2474B8B2003E86B1 /* WoofResponse.swift */; };
-		00DD49502474B8F0003E86B1 /* DogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DD494F2474B8F0003E86B1 /* DogView.swift */; };
+		00DD49502474B8F0003E86B1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DD494F2474B8F0003E86B1 /* DetailView.swift */; };
 		00DD49532474B92D003E86B1 /* TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DD49522474B92D003E86B1 /* TextFields.swift */; };
 		00DD49552474B958003E86B1 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DD49542474B958003E86B1 /* LoadingView.swift */; };
 		00DD49572474B977003E86B1 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DD49562474B977003E86B1 /* LoadingIndicator.swift */; };
@@ -26,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00D03EC4247E38CE005F82A0 /* RecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
+		00D03EC6247E3961005F82A0 /* GameHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHandler.swift; sourceTree = "<group>"; };
+		00D03EC8247E3996005F82A0 /* RecordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordResponse.swift; sourceTree = "<group>"; };
 		00DD492A2474AF32003E86B1 /* Corntinental.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Corntinental.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00DD492D2474AF32003E86B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00DD492F2474AF32003E86B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,8 +43,7 @@
 		00DD49452474B79E003E86B1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		00DD49482474B80F003E86B1 /* LoginHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHandler.swift; sourceTree = "<group>"; };
 		00DD494A2474B867003E86B1 /* ApiHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHandler.swift; sourceTree = "<group>"; };
-		00DD494D2474B8B2003E86B1 /* WoofResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoofResponse.swift; sourceTree = "<group>"; };
-		00DD494F2474B8F0003E86B1 /* DogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogView.swift; sourceTree = "<group>"; };
+		00DD494F2474B8F0003E86B1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		00DD49522474B92D003E86B1 /* TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFields.swift; sourceTree = "<group>"; };
 		00DD49542474B958003E86B1 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		00DD49562474B977003E86B1 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
@@ -109,7 +113,7 @@
 			children = (
 				00DD49512474B915003E86B1 /* ReusableViews */,
 				00DD49422474B733003E86B1 /* LoginView.swift */,
-				00DD494F2474B8F0003E86B1 /* DogView.swift */,
+				00DD494F2474B8F0003E86B1 /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -118,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				00DD49452474B79E003E86B1 /* LoginViewModel.swift */,
+				00D03EC4247E38CE005F82A0 /* RecordViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 			children = (
 				00DD49482474B80F003E86B1 /* LoginHandler.swift */,
 				00DD494A2474B867003E86B1 /* ApiHandler.swift */,
+				00D03EC6247E3961005F82A0 /* GameHandler.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -134,7 +140,7 @@
 		00DD494C2474B894003E86B1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				00DD494D2474B8B2003E86B1 /* WoofResponse.swift */,
+				00D03EC8247E3996005F82A0 /* RecordResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -289,10 +295,12 @@
 				00DD49432474B733003E86B1 /* LoginView.swift in Sources */,
 				00DD494B2474B867003E86B1 /* ApiHandler.swift in Sources */,
 				00DD49532474B92D003E86B1 /* TextFields.swift in Sources */,
+				00D03EC5247E38CE005F82A0 /* RecordViewModel.swift in Sources */,
 				00DD49462474B79E003E86B1 /* LoginViewModel.swift in Sources */,
+				00D03EC7247E3961005F82A0 /* GameHandler.swift in Sources */,
 				00DD49322474AF32003E86B1 /* ContentView.swift in Sources */,
-				00DD49502474B8F0003E86B1 /* DogView.swift in Sources */,
-				00DD494E2474B8B2003E86B1 /* WoofResponse.swift in Sources */,
+				00D03EC9247E3996005F82A0 /* RecordResponse.swift in Sources */,
+				00DD49502474B8F0003E86B1 /* DetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
